@@ -19,5 +19,5 @@ from skniprojectmain import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.index, name='index'),
+    path('measures/', views.company_measures, name='company_measures'),
 ]

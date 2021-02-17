@@ -1,16 +1,19 @@
 from django.http import HttpResponse
 from django.template import loader
+from .models import CompanyMeasure
+from django.shortcuts import render
 
-import backend.backend.models as m
 
 
-def index(request):
-    company_measure_list = m.CompanyMeasure.objects.order_by('id_company')
-    template = loader.get_template('templatePath') # tu trzeba bedzie wpisac sciezke do szablonu
+
+def company_measures(request):
+    company_measure_list = CompanyMeasure.objects.order_by('id_company')
+    template = loader.get_template('skniprojectmain/measures.html') # tu trzeba bedzie wpisac sciezke do szablonu
     context = {
-        'CompanyMeasureList': company_measure_list,
+        'company_measure_list': company_measure_list,
     }
+    #return render(request, 'measures.html',context)
     return HttpResponse(template.render(context, request))
-
-
+    #output = ', '.join([str(q.value) for q in company_measure_list])
+    #return HttpResponse(output)
 
