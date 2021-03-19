@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'skniprojectmain.apps.SkniprojectmainConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -75,11 +76,8 @@ WSGI_APPLICATION = 'backend.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'skni',
-        'USER': 'skni',
-        'PASSWORD': 'skniskni',
-        'HOST': 'database',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': 'sknidb'
     }
 }
 

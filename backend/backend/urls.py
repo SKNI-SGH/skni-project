@@ -15,7 +15,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from skniprojectmain import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('measures/', views.company_measures, name='company_measures'),
 ]
