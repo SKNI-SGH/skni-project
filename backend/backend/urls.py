@@ -17,7 +17,12 @@ from django.contrib import admin
 from django.urls import path
 from skniprojectmain import views
 
+from django.contrib import admin
+from django.urls import path, include
+
+
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('measures/', views.company_measures, name='company_measures'),
+    #path('measures/', views.company_measures, name='company_measures'),
+    path('', include('skniprojectmain.urls')),
 ]
