@@ -8,6 +8,7 @@
     font-weight: 700;
     color: #4B5DFF;
     margin: 0 0 0 30px;
+    text-decoration: none;
 }
 .link {
     padding: 0 10px;
@@ -29,6 +30,7 @@
     padding: 10px 30px;
     font-weight: 700;
     margin: 0 15px 0 0;
+    text-decoration: none;
 }
 
 @media (max-width: 600px) {
