@@ -4,6 +4,7 @@ import Header from "./components/Header/Header";
 import {BrowserRouter} from "react-router-dom";
 import {Route} from "react-router";
 import MainPage from "./components/MainPage/MainPage";
+import SearchPage from "./components/SearchPage/SearchPage";
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
     <div className="App">
      <Header />
      <Route  path={'/home'} component={MainPage}/>
+     <Route path={'/search'} component={SearchPage} />
     </div>
       </BrowserRouter>
   );
