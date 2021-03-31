@@ -7,8 +7,7 @@ class Company(models.Model):
     full_name = models.CharField(max_length=999)
     industry = models.CharField(max_length=999)
 
-    def __str__(self):
-       return self.company_name
+
 
 
 
@@ -16,19 +15,25 @@ class Measure(models.Model):
     id = models.IntegerField(primary_key=True)
     value_name = models.CharField(max_length=999)
 
-    def __str__(self):
-       return self.value_name
 
 
+#id_companymeasure=models.IntegerField(primary_key=True)
 class CompanyMeasure(models.Model):
-    id_company = models.ForeignKey(Company, on_delete=models.CASCADE)
+
+    id_company = models.ForeignKey(Company,related_name='id_companymeasure', on_delete=models.CASCADE)
     id_measure = models.ForeignKey(Measure, on_delete=models.CASCADE)
 
     end_date = models.DateTimeField()
     value = models.FloatField()
 
-    def __str__(self):
-        return self.value
+  #  class Meta:
+  #      unique_together = ['id_company', 'id_measure']
+  #      ordering = ['id_measure']
+
+  #  def __str__(self):
+  #      return '%d: %s' % (self.end_date, self.value)
+
+
 
 
 class FinancialIndicator(models.Model):
@@ -36,8 +41,7 @@ class FinancialIndicator(models.Model):
     indicator_name = models.CharField(max_length=999)
     indicator_type = models.CharField(max_length=999)
 
-    def __str__(self):
-        return self.indicator_name
+
 
 
 class FinancialIndicatorMeasure(models.Model):
@@ -47,6 +51,5 @@ class FinancialIndicatorMeasure(models.Model):
     date = models.DateTimeField()
     id_indicators = models.ForeignKey(FinancialIndicator, on_delete=models.CASCADE)
 
-    def __str__(self):
-        return self.id
+
 
