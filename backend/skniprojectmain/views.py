@@ -6,14 +6,18 @@ from django.http import JsonResponse
 #import json
 from rest_framework import viewsets
 
-from .serializers import MeasureSerializer
-from .models import Company
+from .serializers import MeasureSerializer, CompanyMeasureSerializer, CompanySerializer
+from .models import Company, Measure
+
+#class CompanyViewSet(viewsets.ModelViewSet):
+#    queryset = Company.objects.all().order_by('id')
+ #   serializer_class = MeasureSerializer
 
 class CompanyViewSet(viewsets.ModelViewSet):
-    queryset = Company.objects.all().order_by('id')
-    serializer_class = MeasureSerializer
-
-
+    # queryset = Measure.objects.all().order_by('id')
+    # serializer_class = MeasureSerializer
+     queryset = Company.objects.all().order_by('id')
+     serializer_class = CompanySerializer
 
 
 

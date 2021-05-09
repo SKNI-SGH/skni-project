@@ -19,8 +19,8 @@ class Measure(models.Model):
 
 #id_companymeasure=models.IntegerField(primary_key=True)
 class CompanyMeasure(models.Model):
-
-    id_company = models.ForeignKey(Company,related_name='id_companymeasure', on_delete=models.CASCADE)
+#related_name='id_companymeasure' usunięte z id_company
+    id_company = models.ForeignKey(Company, on_delete=models.CASCADE)
     id_measure = models.ForeignKey(Measure, on_delete=models.CASCADE)
 
     end_date = models.DateTimeField()
